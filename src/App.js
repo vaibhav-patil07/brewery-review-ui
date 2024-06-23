@@ -24,7 +24,7 @@ function App() {
       const response = await login(values.email, values.password);
       const data = response.data;
       setError("");
-      navigate("/dashboard", { state: { user: data.user } });
+      navigate("/dashboard", { state: { user: data } });
     } catch (error) {
       const response = error.response;
       const data = response.data;
@@ -78,7 +78,7 @@ function App() {
           </div>
           <div className="create-account-container">
             <h3>New user ?</h3>
-            <a href="/" className="create-account">
+            <a href="/signup" className="create-account">
               Create Account
             </a>
           </div>

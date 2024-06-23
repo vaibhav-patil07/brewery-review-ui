@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
 function BreweryCard(props) {
-  const { brewery } = props;
+  const { brewery, token } = props;
   const navigate = useNavigate();
   const onClickCard = () => {
-    navigate(`/dashboard/${brewery.id}`);
+    navigate(`/dashboard/${brewery.id}`, { state: { token } });
   };
   return (
     <div className="card-container" onClick={onClickCard}>

@@ -13,4 +13,10 @@ const getBreweryById = async (id) => {
   const response = await axiosInstance.get(`/${id}`);
   return response;
 };
-export { getBreweries, getBreweryById };
+
+const searchBreweries = async (query) => {
+  const response = await axiosInstance.get(encodeURI(`/search?query=${query}`));
+  return response;
+};
+
+export { getBreweries, getBreweryById, searchBreweries };
