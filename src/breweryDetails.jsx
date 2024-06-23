@@ -69,7 +69,7 @@ function BreweryDetails() {
 
   const onUserVote = async () => {
     try {
-      const response = await saveRatings(id, token, userRating);
+      const response = await saveRatings(id, token, userRating, description);
       setHasUserVoted(true);
     } catch (error) {
       console.log(error);
